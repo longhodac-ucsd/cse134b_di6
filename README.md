@@ -1,34 +1,11 @@
-# Astro Starter Kit: Minimal
+# CSE 134B : Discussion 6
 
-```sh
-npm create astro@latest -- --template minimal
-```
+For Astro to run on your system, you will also need to have a compatible version of Node.js installed. 
+For whatever reason Astro only supports even-numbered Node.js versions, so verify this with node -v.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+https://docs.astro.build/en/tutorial/1-setup/2/ gives a very straightforward intro to creating and running your site.
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
+See below for a list of relevant Astro commands and their effects:
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
 | `npm install`             | Installs dependencies                            |
@@ -38,6 +15,24 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Folder structure of src
+
+```
+Project root
+├─ src/                    
+│  ├─ layouts/             # allows you to set up templates that can be recycled across pages
+│  │  └─ MarkdownPostLayout.astro  # sample layout
+│  ├─ pages/               # Top-level routes/pages
+│  │  ├─ index.astro      
+│  │  └─ blogs.astro       
+│  ├─ components/          # For any reusable components (smaller than layouts)
+│  │  └─ Navigation.astro
+│  ├─ posts/               # Markdown blog posts/content. One quirk with Astro is that markdown files, as shown in pages/posts, can automatically be rendered in readable HTML, though for full credit they should be enhanced with a layout.
+│  │  ├─ post-1.md
+│  │  ├─ post-2.md
+│  │  └─ post-3.md
+│  └─ styles/              # Global and/or component styles
+│     └─ global.css
+```
+For full credit, you are expected to go a bit beyond what has already been presented in the discussion.
